@@ -37,42 +37,50 @@ class GraphicalInterfaceWindow(QMainWindow):
         self.setWindowTitle("Buscar imagen a rotar")
         #self.setGeometry(100, 100, 300, 200)
         self.setWindowIcon(QIcon('android.png'))
-        
+
         self.lbl_inf.setText('Suba una imagen y decida '
                         'el ángulo de rotación moviendo el disco rotatorio.')
         self.lbl_inf.setAlignment(Qt.AlignmentFlag.AlignJustify)
-        self.lbl_inf.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.lbl_inf.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, 
+                                                QSizePolicy.Fixed))
 
         self.lbl_image.setText('Imagen: ')
         self.button_image.setText('Subir')
-        self.button_image.setFixedWidth(100)
-        self.lbl_image.setFixedWidth(80)
+        self.button_image.setFixedWidth(200)
+        self.lbl_image.setFixedWidth(100)
         self.lyt_photo.addRow(self.lbl_image, self.button_image)
-        self.lbl_image.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        self.button_image.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.lbl_image.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, 
+                                                QSizePolicy.Fixed))
+        self.button_image.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, 
+                                                    QSizePolicy.Fixed))
 
         self.lbl_angle.setText('Ángulo de rotación: ')
-        self.dial_angle.setFixedWidth(80)
+        self.dial_angle.setFixedWidth(200)
         self.lbl_angle.setFixedWidth(100)
-        self.lnedt_angle.setFixedWidth(80)
+        self.lnedt_angle.setFixedWidth(100)
         self.dial_angle.setRange(0,359)
         self.dial_angle.setValue(0)
         self.lnedt_angle.setDisabled(True)
-        self.lbl_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        self.dial_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        self.lnedt_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.lbl_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, 
+                                                QSizePolicy.Fixed))
+        self.dial_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, 
+                                                QSizePolicy.Fixed))
+        self.lnedt_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, 
+                                                    QSizePolicy.Fixed))
 
         self.lyt_angle.addRow(self.dial_angle, self.lnedt_angle)
-        
+
         self.label.setFixedHeight(300)
-        self.label.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
-        self.label_rt.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.label.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, 
+                                            QSizePolicy.Fixed))
+        self.label_rt.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, 
+                                                QSizePolicy.Fixed))
 
         #Funcionality
         self.button_image.clicked.connect(self.upload_image)
         self.dial_angle.valueChanged.connect(self.dial_value)
         self.dial_angle.valueChanged.connect(self.rotate_image)
-        
+
         #Add Widgets and Layouts
         self.lyt_settings.addWidget(self.lbl_inf)
         self.lyt_settings.addLayout(self.lyt_photo)
@@ -95,7 +103,7 @@ class GraphicalInterfaceWindow(QMainWindow):
         self.fname = QFileDialog.getOpenFileName(self, 'Open file', ' / home')
         self.label.setPixmap(QPixmap(self.fname[0]).scaledToHeight(300))
         self.button_image.setText('Subir otra imagen')
-        
+
 
     def rotate_image(self,s):
         self.label.hide()
@@ -109,14 +117,14 @@ class GraphicalInterfaceWindow(QMainWindow):
         self.scale = 1
 
         self.M = cv2.getRotationMatrix2D(self.center, self.angle, self.scale)
-        
+
         self.img_rotate = cv2.warpAffine(self.img, self.M, (w, h))
 
         self.qImg = QImage(self.img_rotate.data, w, h, bytesPerLine, 
                         QImage.Format.Format_RGB888)
 
         self.label_rt.setPixmap(QPixmap(self.qImg).scaledToHeight(300))
-        
+
 
 if __name__=='__main__':
     app = QApplication([])
