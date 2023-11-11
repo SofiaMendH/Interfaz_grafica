@@ -1,7 +1,7 @@
 # Importar bibliotecas Agregar las que faltan
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, \
     QFileDialog, QDial, QWidget, QHBoxLayout, QPushButton, \
-        QVBoxLayout, QFormLayout, QLineEdit
+        QVBoxLayout, QFormLayout, QLineEdit, QSizePolicy
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon, QPixmap, QImage
 
@@ -10,16 +10,15 @@ import cv2
 class GraphicalInterfaceWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-
+        #layouts
         self.container = QWidget()
-
         self.main_layout = QHBoxLayout()
         self.lyt_settings = QVBoxLayout()
-        self.lyt_image = QVBoxLayout()
 
         self.lyt_photo = QFormLayout()
         self.lyt_angle = QFormLayout()
 
+        #Widgets
         self.lbl_image = QLabel()
         self.button_image = QPushButton()
 
@@ -29,7 +28,6 @@ class GraphicalInterfaceWindow(QMainWindow):
 
         self.label = QLabel()
         self.label_rt = QLabel()
-
         self.lbl_inf = QLabel()
 
         self.setup_ui()
@@ -37,48 +35,56 @@ class GraphicalInterfaceWindow(QMainWindow):
 
     def setup_ui(self):
         self.setWindowTitle("Buscar imagen a rotar")
-        self.setGeometry(100, 100, 400, 300)
+        #self.setGeometry(100, 100, 300, 200)
         self.setWindowIcon(QIcon('android.png'))
-
+        
         self.lbl_inf.setText('Suba una imagen y decida '
                         'el ángulo de rotación moviendo el disco rotatorio.')
         self.lbl_inf.setAlignment(Qt.AlignmentFlag.AlignJustify)
+        self.lbl_inf.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
         self.lbl_image.setText('Imagen: ')
         self.button_image.setText('Subir')
         self.button_image.setFixedWidth(100)
-        self.lbl_image.setFixedWidth(50)
+        self.lbl_image.setFixedWidth(80)
         self.lyt_photo.addRow(self.lbl_image, self.button_image)
-
-        self.button_image.clicked.connect(self.upload_image)
+        self.lbl_image.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.button_image.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
         self.lbl_angle.setText('Ángulo de rotación: ')
-        self.dial_angle.setFixedWidth(100)
+        self.dial_angle.setFixedWidth(80)
         self.lbl_angle.setFixedWidth(100)
         self.lnedt_angle.setFixedWidth(80)
         self.dial_angle.setRange(0,359)
         self.dial_angle.setValue(0)
         self.lnedt_angle.setDisabled(True)
+        self.lbl_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.dial_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.lnedt_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
         self.lyt_angle.addRow(self.dial_angle, self.lnedt_angle)
+        
+        self.label.setFixedHeight(300)
+        self.label.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        self.label_rt.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
 
         #Funcionality
-
+        self.button_image.clicked.connect(self.upload_image)
         self.dial_angle.valueChanged.connect(self.dial_value)
         self.dial_angle.valueChanged.connect(self.rotate_image)
-
+        
+        #Add Widgets and Layouts
         self.lyt_settings.addWidget(self.lbl_inf)
         self.lyt_settings.addLayout(self.lyt_photo)
+        self.lyt_settings.addWidget(self.label)
+        self.lyt_settings.addWidget(self.label_rt)
         self.lyt_settings.addWidget(self.lbl_angle)
         self.lyt_settings.addLayout(self.lyt_angle)
 
         self.main_layout.addLayout(self.lyt_settings)
-        self.main_layout.addLayout(self.lyt_image)
 
         self.container.setLayout(self.main_layout)
         self.setCentralWidget(self.container)
-
-        self.lyt_image.addWidget(self.label)
 
 
     def dial_value(self):
@@ -87,10 +93,9 @@ class GraphicalInterfaceWindow(QMainWindow):
 
     def upload_image(self,s):
         self.fname = QFileDialog.getOpenFileName(self, 'Open file', ' / home')
-        self.label.setPixmap(QPixmap(self.fname[0]))
-
+        self.label.setPixmap(QPixmap(self.fname[0]).scaledToHeight(300))
         self.button_image.setText('Subir otra imagen')
-
+        
 
     def rotate_image(self,s):
         self.label.hide()
@@ -110,9 +115,8 @@ class GraphicalInterfaceWindow(QMainWindow):
         self.qImg = QImage(self.img_rotate.data, w, h, bytesPerLine, 
                         QImage.Format.Format_RGB888)
 
-        self.label_rt.setPixmap(QPixmap(self.qImg))
+        self.label_rt.setPixmap(QPixmap(self.qImg).scaledToHeight(300))
         
-        self.lyt_image.addWidget(self.label_rt)
 
 if __name__=='__main__':
     app = QApplication([])
