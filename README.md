@@ -20,4 +20,26 @@ Como entorno se ha utilizado a Spyder de Anaconda, el cual es un potente entorno
 Para más información visite [spyder](https://pypi.org/project/spyder/).
 
 ### Bibliotecas usadas de Python
+#### OpenCV
+
 ####  PYQT5
+##### QtWidgets
+##### QtCore
+##### QtGui
+
+### Formato .tiff en las imágenes
+
+## Métodos
+
+### Descripción del método
+
+### Mockup
+
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/cab7d555-c972-418a-9904-daf9674ad26b)
+
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/1053be1f-ae21-4b2a-829c-1f74612e2509)
+
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/cca01c81-ab68-4ad9-88bb-00fe397c7435)
+
+## Resultados
+
