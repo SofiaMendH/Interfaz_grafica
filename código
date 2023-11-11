@@ -1,0 +1,119 @@
+# Importar bibliotecas Agregar las que faltan
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QAction, \
+    QToolBar, QMenuBar, QFileDialog, QDial, QWidget, QHBoxLayout, QPushButton, \
+        QVBoxLayout, QGridLayout, QFormLayout, QLineEdit, QSizePolicy
+from PyQt5.QtGui import QIcon, QPixmap, QImage
+
+import cv2
+
+class GraphicalInterfaceWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        
+        self.container = QWidget()
+
+        self.main_layout = QHBoxLayout()
+        self.lyt_settings = QVBoxLayout()
+        self.lyt_image = QVBoxLayout()
+
+        self.lyt_photo= QFormLayout()
+        self.lyt_angle = QFormLayout()
+        
+        self.lbl_image = QLabel()
+        self.button_image = QPushButton()
+        
+        self.lbl_angle = QLabel()
+        self.dial_angle = QDial()
+        self.lnedt_angle = QLineEdit()
+        
+        self.label = QLabel()
+        self.label_rt = QLabel()
+        
+        self.setup_ui()
+        
+    def setup_ui(self):
+        self.setWindowTitle("Buscar imagen a rotar")
+        self.setGeometry(100, 100, 400, 300)
+        self.setWindowIcon(QIcon('android.png'))
+        
+        self.lbl_image.setText('Imagen: ')
+        self.button_image.setText('Subir')
+        self.button_image.setFixedWidth(100)
+        self.lbl_image.setFixedWidth(50)
+        self.lyt_photo.addRow(self.lbl_image, self.button_image)
+        
+        self.button_image.clicked.connect(self.UploadImage)
+        
+        #self.lbl_image.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        #self.button_image.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        
+        self.lbl_angle.setText('Ángulo: ')
+        self.dial_angle.setFixedWidth(80)
+        self.lbl_angle.setFixedWidth(60)
+        self.lnedt_angle.setFixedWidth(50)
+        self.dial_angle.setRange(0,359)
+        self.dial_angle.setValue(0)
+        self.lnedt_angle.setDisabled(True)
+        
+        self.lyt_angle.addRow(self.dial_angle, self.lnedt_angle)
+        
+        #self.lbl_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        #self.dial_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        #self.lnedt_angle.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed))
+        
+        #Funcionality
+        
+        self.dial_angle.valueChanged.connect(self.DialValue)
+        self.dial_angle.valueChanged.connect(self.RotateImage)
+        
+        self.lyt_settings.addLayout(self.lyt_photo)
+        self.lyt_settings.addWidget(self.lbl_angle)
+        self.lyt_settings.addLayout(self.lyt_angle)
+        
+        self.main_layout.addLayout(self.lyt_settings)
+        self.main_layout.addLayout(self.lyt_image)
+        
+        self.container.setLayout(self.main_layout)
+        self.setCentralWidget(self.container)
+        
+        self.lyt_image.addWidget(self.label)
+        
+        
+    def DialValue(self):
+        self.lnedt_angle.setText(str(self.dial_angle.value()))
+        
+    def UploadImage(self,s):
+        self.fname = QFileDialog.getOpenFileName(self, 'Open file', '/home')
+        self.label.setPixmap(QPixmap(self.fname[0]))
+        
+        
+    def RotateImage(self,s):
+        
+        self.label.hide()
+        
+        self.img = cv2.imread(self.fname[0])
+        h, w,c = self.img.shape
+        bytesPerLine = 3 * w
+        
+        self.angle=self.dial_angle.value()
+        self.center = (w//2, h//2)
+        self.scale = 1
+        
+
+        self.M = cv2.getRotationMatrix2D(self.center, self.angle, self.scale)
+        
+        self.img_rotate = cv2.warpAffine(self.img, self.M, (w, h))
+
+        self.qImg = QImage(self.img_rotate.data, w, h, bytesPerLine, QImage.Format.Format_RGB888)
+
+        self.label_rt.setPixmap(QPixmap(self.qImg))
+        
+        self.lyt_image.addWidget(self.label_rt)
+
+
+if __name__=='__main__':
+    app = QApplication([])
+    window = GraphicalInterfaceWindow()
+    window.show()
+
+    app.exec_()
