@@ -1,5 +1,15 @@
 # Interfaz gráfica
 ## Introducción
+El ser humano ha estado tratando, durante aproximadamente 60 años, desarrollar formas para que las máquinas vean y comprendan datos visuales, como lo son las imagenes. 
+
+La _visión por computadora_; también conocida como _visión artificial_, _visión informática_ o _visión técnica_; es una disciplina científica que incluye métodos para adquirir, procesar, analizar y comprender las imágenes del mundo real con el fin de producir información numérica o simbólica para que puedan ser tratados por un ordenador.
+
+Una imagen puede ser definida como una función de dos dimensiones $f(x,y)$ donde $x$ y $y$ son las coordenadas espaciales (plano) y la amplitud de la función $f$ en algún par de coordenadas $(x,y)$ es llamada intensidad o nivel de gris de la imagen en ese punto. Cuando $x$ y $y$, los valores de la amplitud de la función _f_, son cantidades discretas finitas,
+a dicha imagen se le llama _imagen digital_, la cual está compuesta de un número finito de elementos y cada uno tiene una localidad y valor particulares. A éstos elementos se les llama _elementos de la imagen_ o _pixels_; siendo este último el término más usado para denotar los elementos de una imagen digital.
+
+Por medio de la visión por computadora, se puede realizar un procesamiento de imágenes digitales, un conjunto de técnicas que se aplican a las imágenes digitales con el objetivo de mejorar la calidad o facilitar la búsqueda de información. Entre dichas técnicas se halla el _proceso de filtrado_, que es el conjunto de técnicas englobadas dentro del preprocesamiento de imágenes cuyo objetivo fundamental es obtener, a partir de una imagen origen, otra final cuyo resultado sea más adecuado para una aplicación específica mejorando ciertas características de la misma que posibilite efectuar operaciones del procesado sobre ella. Para poder llevar a cabo dicho proceso se efectúan operaciones _filtro_ a los píxeles de una imagen digital para optimizarla, enfatizar cierta información o conseguir un efecto especial en ella.
+
+
 
 ## Materiales
 ### Pyhton
