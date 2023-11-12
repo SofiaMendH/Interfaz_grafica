@@ -221,6 +221,45 @@ a_{00} & a_{01} & b_{00}\\
 a_{10} & a_{11} & b_{01}
 \end{pmatrix}$$
 
+Así, para cualquier vector que indique la posición del pixel en la imagen, $ X = \begin{bmatrix}
+x \\
+y
+\end{bmatrix} $, se convertirá bajo la transformación afín a 
+
+$$ T = M \cdot \begin{bmatrix}
+x & y \\
+\end{bmatrix}^T =
+\begin{bmatrix}
+a_{00}x + a_{01}y + b_{00}\\
+a_{10}x + a_{11}y + b_{01}
+\end{bmatrix}.$$
+
+Una de dichas transformaciones es _rotación_. En matemáticas, la rotación es un concepto que tiene su origen en la geometría. Cualquier rotación es un movimiento definido en un determinado espacio que conserva al menos un punto en su posición original. Su matriz asociada recibe el nombre de _matriz de rotación_. No obstante, matriz de rotación en matemáticas difiere en cierto sentido de la utilizada en el procesamiento de imagenes digitales. La matriz de rotación que corresponde a este filtrado es la indicada con anterioridad en Materiales/OpenCV/cv2 justo en la función que ejecuta la transformación.
+
+$$ M = \begin{pmatrix}
+\alpha & &\beta & &(1- \alpha) c_x - \beta c_y\\
+& & & & \\
+-\beta & &\alpha & &\beta c_x + (1- \alpha) c_y
+\end{pmatrix} $$
+
+donde
+- $\alpha = scale \cdot \cos\theta$.
+- $\beta = scale \cdot \sin\theta$.
+- $c_x$ y $cy$ son las coordenadas del centro de la imagen.
+
+Por lo que, dado el vector $ X = \begin{bmatrix}
+x \\
+y
+\end{bmatrix} $, se convertirá bajo la transformación afín rotación en 
+
+$$ T = M \cdot \begin{bmatrix}
+x & y \\
+\end{bmatrix}^T =
+\begin{bmatrix}
+\alpha x + \beta y + (1- \alpha) c_x - \beta c_y\\
+& & & & \\
+-\beta x + \alpha  y + \beta c_x + (1- \alpha) c_y
+\end{bmatrix}.$$
 
 ### Descripción del código
 
