@@ -76,7 +76,27 @@ donde
 OpenCV proporciona una función cv2.getAffineTransform() que toma la matriz _M_ de transformación anterior como parámetro y retorna la imagen rotada.
 
 ####  PYQT5
+Qt es un framework multiplataforma orientado a objetos ampliamente usado para desarrollar programas (software) que utilicen interfaz gráfica de usuario. Qt utiliza el lenguaje de programación C++ de forma nativa, adicionalmente puede ser utilizado en varios otros lenguajes de programación a través de bindings.
+
+_PyQt_ es un binding de la biblioteca gráfica Qt para el lenguaje de programación Python. La biblioteca está desarrollada por la firma británica Riverbank Computing y está disponible para Windows, GNU/Linux y Mac OS X bajo diferentes licencias.
+
+PyQt5 es un conjunto completo de enlaces de Python para Qt v5. Se implementa como más de 35 módulos de extensión y puede integrarse en aplicaciones basadas en C++ para permitir a los usuarios configurar o mejorar la funcionalidad de las aplicaciones.
+
+Para mas información visite [PyQt5-PyPI](https://pypi.org/project/PyQt5/).
+
 ##### QtWidgets
+El módulo QtWidgets proporciona un conjunto de elementos de interfaz de usuario para crear interfaces de usuario clásicas de estilo de escritorio.
+
+###### Widgets
+Los widgets son los elementos principales para crear interfaces de usuario en Qt. Pueden mostrar datos e información de estado, recibir información del usuario y proporcionar un contenedor para otros widgets que deben agruparse. Un widget que no está incrustado en un widget principal se denomina ventana.
+
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/52605366-0d5f-45d1-ba32-2b878b6892a0)
+
+Los utilizados en el código son:
+
+
+
+
 ##### QtCore
 ##### QtGui
 
