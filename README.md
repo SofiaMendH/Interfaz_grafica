@@ -221,10 +221,7 @@ a_{00} & a_{01} & b_{00}\\
 a_{10} & a_{11} & b_{01}
 \end{pmatrix}$$
 
-Así, para cualquier vector que indique la posición del pixel en la imagen, $ X = \begin{bmatrix}
-x \\
-y
-\end{bmatrix} $, se convertirá bajo la transformación afín a 
+Así, para cualquier vector que indique la posición del pixel en la imagen, $X = (x , y)$, se convertirá bajo la transformación afín a 
 
 $$ T = M \cdot \begin{bmatrix}
 x & y \\
@@ -247,10 +244,7 @@ donde
 - $\beta = scale \cdot \sin\theta$.
 - $c_x$ y $cy$ son las coordenadas del centro de la imagen.
 
-Por lo que, dado el vector $ X = \begin{bmatrix}
-x \\
-y
-\end{bmatrix} $, se convertirá bajo la transformación afín rotación en 
+Por lo que, dado el vector $X = (x , y)$, se convertirá bajo la transformación afín rotación en 
 
 $$ T = M \cdot \begin{bmatrix}
 x & y \\
