@@ -9,7 +9,11 @@ a dicha imagen se le llama _imagen digital_, la cual está compuesta de un núme
 
 Por medio de la visión por computadora, se puede realizar un procesamiento de imágenes digitales, un conjunto de técnicas que se aplican a las imágenes digitales con el objetivo de mejorar la calidad o facilitar la búsqueda de información. Entre dichas técnicas se halla el _proceso de filtrado_, que es el conjunto de técnicas englobadas dentro del preprocesamiento de imágenes cuyo objetivo fundamental es obtener, a partir de una imagen origen, otra final cuyo resultado sea más adecuado para una aplicación específica mejorando ciertas características de la misma que posibilite efectuar operaciones del procesado sobre ella. Para poder llevar a cabo dicho proceso se efectúan operaciones _filtro_ a los píxeles de una imagen digital para optimizarla, enfatizar cierta información o conseguir un efecto especial en ella.
 
+Aún cuando las computadoras sean capaces de analizar y procesar imagenes con ciertos algoritmos, no son capaces de decidir por cuenta propia a qué imagen debería aplicarle algún filtro, ni mucho menos la razón de dicha decisión. Es por ello que las interfaces gráficas son de gran importancia.
 
+Una _interfaz gráfica_ de usuario, conocida también como _GUI_ (del inglés _graphical user interface_), utiliza imágenes, iconos y menús para mostrar las acciones disponibles en un dispositivo, entre las que el usuario puede escoger una o varias. Estas incluyen elementos como menús, ventanas, contenido gráfico, cursor, los beeps y algunos otros sonidos que la computadora hace, y en general, todos aquellos canales por los cuales se permite la comunicación entre el ser humano y la computadora.
+
+A continuación se presentará un código en _Python_ de una interfaz gráfica cuyo objetivo es efectuar un proceso de filtrado, cuyo filtro será _rotación_, en una imagen con formato .tiff.
 
 ## Materiales
 ### Pyhton
