@@ -1,6 +1,6 @@
 # Interfaz gráfica
 ## Introducción
-El ser humano ha estado tratando, durante aproximadamente 60 años, desarrollar formas para que las máquinas vean y comprendan datos visuales, como lo son las imagenes. 
+El ser humano ha estado tratando, durante aproximadamente 60 años, de desarrollar formas para que las máquinas vean y comprendan datos visuales, como lo son las imagenes. 
 
 La _visión por computadora_; también conocida como _visión artificial_, _visión informática_ o _visión técnica_; es una disciplina científica que incluye métodos para adquirir, procesar, analizar y comprender las imágenes del mundo real con el fin de producir información numérica o simbólica para que puedan ser tratados por un ordenador.
 
