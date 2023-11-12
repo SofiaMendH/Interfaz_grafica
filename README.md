@@ -33,6 +33,23 @@ Para más información visite [spyder](https://pypi.org/project/spyder/).
 
 ### Bibliotecas usadas de Python
 #### OpenCV
+OpenCV es una biblioteca libre de visión artificial originalmente desarrollada por Intel. OpenCV significa Open Computer Vision (Visión Artificial Abierta). Desde que apareció su primera versión alfa en el mes de enero de 1999, se ha utilizado en una gran cantidad de aplicaciones, y hasta 2020 se la sigue mencionando como la biblioteca más popular de visión artificial. Su popularidad se debe a que es:
+- _Libre_, publicada bajo licencia BSD, para propósitos comerciales y de investigación.
+- _Multiplataforma_, para los sistemas operativos GNU/Linux, Mac OS X, Windows y Android, y para diversas arquitecturas de hardware como x86, x64 (PC), ARM (celulares y Raspberry Pi).
+- _Documentada y explicada_, la organización tiene una preocupación activa de mantener la documentación de referencia para desarrolladores lo más completa y actualizada posible. Viste [Documentación principal, referencias y tutoriales](https://docs.opencv.org/4.x/).
+
+OpenCV está totalmente desarrollado en C++, orientado a objetos y con alta eficiencia computacional. Su API es C++ pero incluye conectores para Python.
+
+#### cv2
+El módulo cv2 es el módulo principal de OpenCV, que proporciona a los desarrolladores una interfaz fácil de usar para trabajar con capacidades de procesamiento de imágenes y vídeo.
+
+De este módulo utilizaremos las siguientes funciones:
+
+#####
+      
+#####
+
+Para más información visite [OpenCV](https://opencv.org/).
 
 ####  PYQT5
 ##### QtWidgets
