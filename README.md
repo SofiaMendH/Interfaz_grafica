@@ -85,20 +85,96 @@ PyQt5 es un conjunto completo de enlaces de Python para Qt v5. Se implementa com
 Para mas información visite [PyQt5-PyPI](https://pypi.org/project/PyQt5/).
 
 ##### QtWidgets
-El módulo QtWidgets proporciona un conjunto de elementos de interfaz de usuario para crear interfaces de usuario clásicas de estilo de escritorio.
+El módulo QtWidgets proporciona un conjunto de elementos de interfaz de usuario para crear interfaces de usuario clásicas de estilo de escritorio. 
+
+###### Class
+Nos permiten ejecutar, controlar y contruir la interfaz. Las usadas en el código son:
+
+#######
+      QApplication()
+#######
+Administra la configuración principal y el flujo de control de una aplicación GUI. Contiene un bucle de eventos principal dentro del cual los eventos generados por elementos de ventana y otras fuentes se procesan y envían. También maneja configuraciones de todo el sistema y de toda la aplicación.
+
+#######
+      QMainWindow()
+#######
+Qt tiene QMainWindow y sus clases relacionadas para la gestión de la ventana principal. QMainWindow tiene su propio diseño al que puede agregar QToolBars, QDockWidgets, QMenuBar y QStatusBar. El diseño tiene un área central que puede ser ocupada por cualquier tipo de widget, como se ve a continuación.
+
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/ca638833-7d39-42db-953f-9de63ad3845a)
+
+#######
+      QWidget()
+#######
+Derivada de las clases QObject y QPaintDevice es la clase base para todos los objetos de la interfaz de usuario.
+
+#######
+      QVBoxLayout()
+#######
+La clase QBoxLayout alinea los widgets vertical u horizontalmente. Una de sus clases derivadas es QVBoxLayout (para organizar widgets verticalmente).
+
+#######
+      QFormLayout()
+#######
+Es una forma conveniente de crear un formulario de dos columnas, donde cada fila consta de un campo de entrada asociado con una etiqueta. Como convención, la columna de la izquierda contiene la etiqueta y la columna de la derecha contiene un campo de entrada.
 
 ###### Widgets
 Los widgets son los elementos principales para crear interfaces de usuario en Qt. Pueden mostrar datos e información de estado, recibir información del usuario y proporcionar un contenedor para otros widgets que deben agruparse. Un widget que no está incrustado en un widget principal se denomina ventana.
 
 ![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/52605366-0d5f-45d1-ba32-2b878b6892a0)
 
-Los utilizados en el código son:
+Los utilizados en el código son
+#######
+      QLabel()
+#######
+Un objeto QLabel actúa como un marcador de posición para mostrar texto o imagen no editable, o una película de GIF animado. También se puede utilizar como clave mnemotécnica para otros widgets.
 
+#######
+      QPushButton()
+#######
+Un botón de comando para invocar la acción
 
+#######
+      QDial()
+#######
+El objeto de clase QDial presenta al usuario un disco rotatorio sobre el que se puede mover un circulo a su alrededor. Es un widget clásico para controlar un valor acotado.
 
+#######
+      QLineEdit()
+#######
+El objeto QLineEdit es el campo de entrada más utilizado. Proporciona un cuadro en el que se puede ingresar una línea de texto. Para ingresar texto de varias líneas, se requiere el objeto QTextEdit.
+
+Para más información sobre QtWidgets visite [Qt Widgets 5.15](https://doc.qt.io/qt-5/qtwidgets-index.html). Para leer la información sobre los widgets acceda al apartado <All Qt C++ Classes>.
 
 ##### QtCore
+Qt Core agrega estas características a C++:
+
+- Un mecanismo muy poderoso para la comunicación fluida de objetos llamado signals y slots.
+- Propiedades de objetos consultables y diseñables.
+- Árboles de objetos jerárquicos y consultables que organizan.
+- Propiedad de objetos de forma natural con punteros protegidos (QPointer).
+- Un elenco dinámico que funciona más allá de los límites de la biblioteca.
+
+Para más información viste [QtCore](https://doc.qt.io/qt-5/qtcore-index.html).
+
 ##### QtGui
+El módulo Qt GUI proporciona clases para la integración del sistema de ventanas, el manejo de eventos, la integración de OpenGL y OpenGL ES, gráficos 2D, imágenes básicas, fuentes y texto. Estas clases son utilizadas internamente por las tecnologías de interfaz de usuario de Qt.
+
+De este modulo se utilizan las siguientes clases.
+
+###### QIcon
+Un QIcon puede generar mapas de píxeles más pequeños, más grandes, activos y deshabilitados a partir del conjunto de mapas de píxeles que se le proporcionan. Estos mapas de píxeles son utilizados por los widgets de Qt para mostrar un icono que representa una acción en particular.
+
+Para más información visite [QPixmap](https://doc.qt.io/qt-5/qicon.html).
+
+###### QPixmap
+QPixmap está diseñado y optimizado para mostrar imágenes en pantalla. Un QPixmap se puede mostrar fácilmente en la pantalla usando QLabel o una de las subclases de QAbstractButton (como QPushButton y QToolButton). QLabel tiene una propiedad de mapa de píxeles, mientras que QAbstractButton tiene una propiedad de icono.
+
+Para más información visite [QPixmap](https://doc.qt.io/qt-5/qpixmap.html).
+
+###### QImage
+La clase QImage proporciona una representación de imagen independiente del hardware que permite el acceso directo a los datos de píxeles y se puede utilizar como paint device.
+
+Para más información visite [QImage](https://doc.qt.io/qt-5/qimage.html).
 
 ### Formato .tiff en las imágenes
 
