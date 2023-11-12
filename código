@@ -1,6 +1,6 @@
 # Importar bibliotecas Agregar las que faltan
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, \
-    QFileDialog, QDial, QWidget, QHBoxLayout, QPushButton, \
+    QFileDialog, QDial, QWidget, QPushButton, \
         QVBoxLayout, QFormLayout, QLineEdit, QSizePolicy
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon, QPixmap, QImage
@@ -12,8 +12,7 @@ class GraphicalInterfaceWindow(QMainWindow):
         super().__init__()
         #layouts
         self.container = QWidget()
-        self.main_layout = QHBoxLayout()
-        self.lyt_settings = QVBoxLayout()
+        self.layout = QVBoxLayout()
 
         self.lyt_photo = QFormLayout()
         self.lyt_angle = QFormLayout()
@@ -82,16 +81,14 @@ class GraphicalInterfaceWindow(QMainWindow):
         self.dial_angle.valueChanged.connect(self.rotate_image)
 
         #Add Widgets and Layouts
-        self.lyt_settings.addWidget(self.lbl_inf)
-        self.lyt_settings.addLayout(self.lyt_photo)
-        self.lyt_settings.addWidget(self.label)
-        self.lyt_settings.addWidget(self.label_rt)
-        self.lyt_settings.addWidget(self.lbl_angle)
-        self.lyt_settings.addLayout(self.lyt_angle)
+        self.layout.addWidget(self.lbl_inf)
+        self.layout.addLayout(self.lyt_photo)
+        self.layout.addWidget(self.label)
+        self.layout.addWidget(self.label_rt)
+        self.layout.addWidget(self.lbl_angle)
+        self.layout.addLayout(self.lyt_angle)
 
-        self.main_layout.addLayout(self.lyt_settings)
-
-        self.container.setLayout(self.main_layout)
+        self.container.setLayout(self.layout)
         self.setCentralWidget(self.container)
 
 
