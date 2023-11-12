@@ -262,7 +262,7 @@ x & y \\
 \end{bmatrix}.$$
 
 ### Descripción del código
-
+En él se observa la clase "GraphicalInterfaceWindow" en donde se define el constructor, la función "setup_ui" que contendrá las configuraciones de los atributos declarados en el constructor (los widgets y layouts), la función "DialValue" que permitirá al usuario visualizar el ángulo de rotación en un QLineEdit no editable (esto gracias a la función .setDisable(True), que desabilitará poderse editar en la interfaz), la función "UploadImage" que permitirá cargar la imagen a la ventana y finalmente la función "RotateImage" que rotará a la imagen de acuerdo a los valores del QDial. Las funciones "DialValue" y "RotateImage" estarán conectadas al QDial por medio de la función, ya establecida en la documentación, .valueChanged. Por otra parte, la función "UploadImage" está conectada a un QPushButton por medio de .clicked.
 
 ### Mockup
 
