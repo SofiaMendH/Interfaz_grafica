@@ -191,7 +191,39 @@ La última revisión del formato es la número 6, del año 1992. Hay algunas ext
 
 ## Métodos
 
-### Descripción del método
+### Filtro: Rotación
+
+Antes de explicar el filtro es importante abordar la definición de _transformación afín_. Una transformación afín $f: A \rightarrow A'$ entre dos espacios afines $(A,E,\gamma)$ y $(A',E',\gamma')$; donde $A$ y $A'$ son subconjuntos no vacíos asociados a los espacios vectoriales $E$ y $E'$, con $\gamma$ y $\gamma'$ el conjunto de todas las traslaciones definidas sobre $A$ y $A'$, respectivamente; es una aplicación sobre los puntos que actúa linealmente sobre los vectores que los unen. Formalmente, $f$ es una transformación afín si existe una aplicación lineal $g$ tal que $\forall p,q \in A$, se cumple $$\vec{{f(p)f(q)}} = g(\vec{{pq}}).$$
+
+En otras palabras, una transformación afín o aplicación afín (también llamada afinidad) entre dos espacios afines consiste en una transformación lineal seguida de una traslación:
+$$x \rightarrow Ax+b$$ En el caso de dimensión finita, toda transformación afín puede representarse por una matriz $A$ y un vector $b$ que satisfacen ciertas propiedades.
+
+Geométricamente, una transformación afín en un espacio euclídeo es una transformación que preserva:
+- Las relaciones de colinealidad (y coplanaridad) entre puntos, es decir, puntos que recaían sobre una misma línea (o sobre un mismo plano) antes de la transformación, son preservadas tras una transformación afín.
+- Las razones entre distancias a lo largo de una línea antes y después de la transformación son iguales.
+
+En el ámbito del procesamiento digital de imágenes, las transformaciones afines son análogas a imprimir en una hoja de goma y estirar los bordes de forma paralela al plano. Esta transformación reubica los píxeles que requieren interpolación de intensidad para aproximar el valor de los píxeles desplazados; la interpolación bicúbica es el estándar para hacer las transformaciones de imágenes en las aplicaciones de procesamiento de la imagen. 
+
+La forma habitual de representar una transformación afín, como parte del proceso de filtrado, es mediante una matriz $2 \times 3$, como se muestra a continuación.
+
+$$ A = \begin{pmatrix}
+a_{00} & a_{01} \\
+a_{10} & a_{11}
+\end{pmatrix},  \qquad b = \begin{pmatrix}
+b_{00} \\
+b_{10}
+\end{pmatrix},$$
+
+$$ M = \begin{bmatrix}
+A & b 
+\end{bmatrix} =  \begin{pmatrix}
+a_{00} & a_{01} & b_{00}\\
+a_{10} & a_{11} & b_{01}
+\end{pmatrix}$$
+
+
+### Descripción del código
+
 
 ### Mockup
 
