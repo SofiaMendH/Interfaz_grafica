@@ -195,9 +195,15 @@ La última revisión del formato es la número 6, del año 1992. Hay algunas ext
 
 ### Mockup
 
+Para la creación de nuestra interfaz gráfica se creó un mockup (bosquejo) que nos permitirá delimitar los Widgets y layouts a utilizar:
+
 ![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/cab7d555-c972-418a-9904-daf9674ad26b)
 
+La siguiente imagen presenta la posición visual los widgets en la interfaz:
+
 ![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/1053be1f-ae21-4b2a-829c-1f74612e2509)
+
+Por último, esta imagen presenta la disposición de los layouts que contrendrán a los widgets.
 
 ![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/cca01c81-ab68-4ad9-88bb-00fe397c7435)
 
