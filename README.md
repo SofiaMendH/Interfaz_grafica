@@ -202,4 +202,24 @@ La última revisión del formato es la número 6, del año 1992. Hay algunas ext
 ![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/cca01c81-ab68-4ad9-88bb-00fe397c7435)
 
 ## Resultados
+Finalmente, la interfaz gráfica terminada:
+
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/41242178-fbfc-4107-9831-876217e8b5e5)
+
+Al cargar la imagen, la interfaz se visualiza de la siguiente manera
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/c9117922-79c4-4905-9e88-4f6de6194ac6)
+
+Al posicionar el disco rotatorio a $90$, es decir al indicarle a la computadora que $\theta = 90°$:
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/3f4cfd7c-c9bf-4349-ab26-8566c5f27120)
+
+Notemos que podemos cambiar el valor del ángulo tantas veces queramos, en la siguiente imagen se muestra la imagen presentada al cambiar el ángulo a $\theta =  200°$:
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/ae05fd6d-0e21-407b-9d8e-1cf30bf8c967)
+
+Incluso, podemos subir otra imagen y aplicarle el filtro:
+![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/9dbb822f-7ec7-4048-acf9-7509146f916e)
+
+
+
+
+
 
