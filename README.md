@@ -87,60 +87,63 @@ Para mas información visite [PyQt5-PyPI](https://pypi.org/project/PyQt5/).
 ##### QtWidgets
 El módulo QtWidgets proporciona un conjunto de elementos de interfaz de usuario para crear interfaces de usuario clásicas de estilo de escritorio. 
 
-###### Class
+__Class__
+######
 Nos permiten ejecutar, controlar y contruir la interfaz. Las usadas en el código son:
 
-#######
+######
       QApplication()
-#######
+######
 Administra la configuración principal y el flujo de control de una aplicación GUI. Contiene un bucle de eventos principal dentro del cual los eventos generados por elementos de ventana y otras fuentes se procesan y envían. También maneja configuraciones de todo el sistema y de toda la aplicación.
 
-#######
+######
       QMainWindow()
-#######
+######
 Qt tiene QMainWindow y sus clases relacionadas para la gestión de la ventana principal. QMainWindow tiene su propio diseño al que puede agregar QToolBars, QDockWidgets, QMenuBar y QStatusBar. El diseño tiene un área central que puede ser ocupada por cualquier tipo de widget, como se ve a continuación.
 
 ![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/ca638833-7d39-42db-953f-9de63ad3845a)
 
-#######
+######
       QWidget()
-#######
+######
 Derivada de las clases QObject y QPaintDevice es la clase base para todos los objetos de la interfaz de usuario.
 
-#######
+######
       QVBoxLayout()
-#######
+######
 La clase QBoxLayout alinea los widgets vertical u horizontalmente. Una de sus clases derivadas es QVBoxLayout (para organizar widgets verticalmente).
 
-#######
+######
       QFormLayout()
-#######
+######
 Es una forma conveniente de crear un formulario de dos columnas, donde cada fila consta de un campo de entrada asociado con una etiqueta. Como convención, la columna de la izquierda contiene la etiqueta y la columna de la derecha contiene un campo de entrada.
 
-###### Widgets
+__Widgets__
+######
+
 Los widgets son los elementos principales para crear interfaces de usuario en Qt. Pueden mostrar datos e información de estado, recibir información del usuario y proporcionar un contenedor para otros widgets que deben agruparse. Un widget que no está incrustado en un widget principal se denomina ventana.
 
 ![image](https://github.com/SofiaMendH/Interfaz_grafica/assets/97262885/52605366-0d5f-45d1-ba32-2b878b6892a0)
 
 Los utilizados en el código son
-#######
+######
       QLabel()
-#######
+######
 Un objeto QLabel actúa como un marcador de posición para mostrar texto o imagen no editable, o una película de GIF animado. También se puede utilizar como clave mnemotécnica para otros widgets.
 
-#######
+######
       QPushButton()
-#######
+######
 Un botón de comando para invocar la acción
 
-#######
+######
       QDial()
-#######
+######
 El objeto de clase QDial presenta al usuario un disco rotatorio sobre el que se puede mover un circulo a su alrededor. Es un widget clásico para controlar un valor acotado.
 
-#######
+######
       QLineEdit()
-#######
+######
 El objeto QLineEdit es el campo de entrada más utilizado. Proporciona un cuadro en el que se puede ingresar una línea de texto. Para ingresar texto de varias líneas, se requiere el objeto QTextEdit.
 
 Para más información sobre QtWidgets visite [Qt Widgets 5.15](https://doc.qt.io/qt-5/qtwidgets-index.html). Para leer la información sobre los widgets acceda al apartado <All Qt C++ Classes>.
@@ -177,6 +180,14 @@ La clase QImage proporciona una representación de imagen independiente del hard
 Para más información visite [QImage](https://doc.qt.io/qt-5/qimage.html).
 
 ### Formato .tiff en las imágenes
+
+El formato TIFF es un formato de gráficos antiguo que permite almacenar imágenes de mapas de bits (raster) muy grandes (más de 4 GB comprimidos) sin pérdida de calidad y sin considerar las plataformas o periféricos utilizados (mapa de bits independiente del dispositivo, conocido como DIB). Permite almacenar imágenes en blanco y negro, en colores verdaderos (hasta 32 bits por píxel) y también indexar imágenes utilizando una paleta. Además de esto, el formato TIF permite que se utilicen varios espacios de color: RGB (rojo, verde, azul), CMYK (cian, magenta, amarillo, negro), CIE L*a*b, YUV/YcrCb.
+
+El principio del formato TIF consiste en definir etiquetas (de ahí el nombre formato de archivo de imágenes con etiquetas) que describen las características de la imagen. Las etiquetas permiten almacenar información acerca de las dimensiones de la imagen, la cantidad de colores utilizados, el tipo de compresión (pueden utilizarse varios algoritmos: paquete de bits/CCITT G3y4/RLE/JPEG/LZW/UIT-T) o la corrección de gama.
+
+Por lo tanto, una descripción de imagen que utiliza etiquetas simplifica la programación del software permitiendo guardar información en formato TIF. Por otro lado, la cantidad de opciones es tan amplia que muchos editores de imágenes que admiten el formato TIF no las integran todas. Por ende, algunas veces, una imagen guardada que utiliza el formato TIF no se puede leer por medio de otro editor.
+
+La última revisión del formato es la número 6, del año 1992. Hay algunas extensiones, como las anotaciones que utiliza el Imaging de Microsoft, pero ninguna puede considerarse estándar.
 
 ## Métodos
 
