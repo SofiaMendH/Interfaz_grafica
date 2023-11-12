@@ -46,10 +46,34 @@ El módulo cv2 es el módulo principal de OpenCV, que proporciona a los desarrol
 De este módulo utilizaremos las siguientes funciones:
 
 #####
-      
+      cv2.imread(img)
 #####
+Es una función para leer una imagen de un archivo. Toma la ruta del archivo como entrada y devuelve una matriz Numpy que contiene la imagen. Si la imagen no se puede leer (debido a que falta el archivo, permisos incorrectos o formato no compatible o no válido), este método devuelve una matriz vacía.
 
-Para más información visite [OpenCV](https://opencv.org/).
+#####
+      cv2.getRotationMatrix2D(center,angle,scale)
+#####
+Se utiliza para hacer la matriz de transformación $M$ que se utilizará para rotar una imagen. Los parámetros son:
+- _center:_ Centro de rotación.
+- _angle(_ $\theta$ _):_ Ángulo de rotación. El ángulo es positivo para el sentido contrario a las agujas del reloj y negativo para el sentido de las agujas del reloj.
+- _scale:_ Factor que escala la imagen.
+Dicha función retorna la matriz $2 \times 3$:
+
+$$ M = \begin{pmatrix}
+\alpha & &\beta & &(1- \alpha) c_x - \beta c_y\\
+& & & & \\
+-\beta & &\alpha & &\beta c_x + (1- \alpha) c_y
+\end{pmatrix} $$
+
+donde
+- $\alpha = scale \cdot \cos\theta$.
+- $\beta = scale \cdot \sin\theta$.
+- $c_x$ y $cy$ son las coordenadas del centro de la imagen.
+
+#####
+      cv2.warpAffine()
+#####
+OpenCV proporciona una función cv2.getAffineTransform() que toma la matriz _M_ de transformación anterior como parámetro y retorna la imagen rotada.
 
 ####  PYQT5
 ##### QtWidgets
